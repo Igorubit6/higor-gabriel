@@ -44,4 +44,3 @@ body.ambient-paused .hero-banknote{animation-play-state:paused}
 @media(max-width:760px){.hero-video{object-position:73% center}.hero-art-stage.video-ready .hero-video{opacity:.68}}
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 
-.hero-play{position:absolute;right:20px;bottom:58px;z-index:3;border:1px solid #7fd41f88;background:#091006e8;color:#dff6ca;border-radius:5px;padding:10px 14px;font-size:12px}.hero-play[hidden]{display:none}@media(prefers-reduced-motion:reduce){.hero-video.user-requested{display:block}}
