@@ -44,3 +44,47 @@ body.ambient-paused .hero-banknote{animation-play-state:paused}
 @media(max-width:760px){.hero-video{object-position:73% center}.hero-art-stage.video-ready .hero-video{opacity:.68}}
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 
+/* ===== v9: apresentação guiada, ícones e slots de ilustração ===== */
+.chap{display:inline-grid;place-items:center;min-width:30px;height:22px;padding:0 7px;margin-right:10px;border:1px solid #7fd41f66;border-radius:3px;background:#7fd41f12;color:#c8f69b;font-size:11px;letter-spacing:.06em;vertical-align:1px}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+/* Placeholder until the ChatGPT image is added to /img */
+.illus{position:relative;aspect-ratio:var(--ar,16/9);margin:0;overflow:hidden;border-radius:8px;border:1px dashed #7fd41f55;background:repeating-linear-gradient(135deg,#0c1309 0 14px,#0a1007 14px 28px)}
+.illus:before{content:attr(data-slot);position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;color:#7d9a66;font:600 12px/1.5 var(--display);letter-spacing:.08em;text-transform:uppercase}
+.illus:has(img){border:0;background:none}.illus:has(img):before{display:none}
+.illus img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.illus-wide{max-width:960px;margin:0 auto 42px;mask-image:linear-gradient(transparent,black 12%,black 88%,transparent)}
+.illus-wide:not(:has(img)){mask-image:none}
+/* 01 qualificação */
+.reason-ico{width:44px;height:44px;padding:10px;border:1px solid #7fd41f45;border-radius:8px;background:#7fd41f10;color:var(--green)}
+.not-fit{margin-top:30px;padding:18px 20px;border:1px solid #b05c5940;background:#1a0d0b55;border-radius:6px}.not-fit>span{display:block;font:600 11px var(--display);letter-spacing:.14em;text-transform:uppercase;color:#d48a85;margin-bottom:10px}.not-fit ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.not-fit li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#b9b0a8}.nf-ico{width:16px;height:16px;margin-top:3px;fill:none;stroke:#d06a63;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+/* 03 iceberg */
+.iceberg-sec{padding-top:40px;background:radial-gradient(ellipse at 50% 60%,#1d3a0c40,transparent 60%)}.iceberg-sec .iceberg-home{max-width:1000px;margin:0 auto}.iceberg-legend{max-width:1000px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}.iceberg-legend>div{padding:16px 20px;border:1px solid #ffffff12;background:#0b1008;border-radius:6px}.iceberg-legend>div:last-child{border-color:#7fd41f55;background:linear-gradient(140deg,#16290c,#0b1208)}.iceberg-legend b{display:block;font-family:var(--display);font-size:15px;color:#e5f2da}.iceberg-legend span{font-size:13px;color:var(--muted)}
+/* 04 método: ilustração por etapa */
+.strategy-panel>.stage-art{grid-column:1/-1;margin-bottom:-14px;border-radius:6px}
+.stage-art img{mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
+/* 05 como funciona */
+.how{background:radial-gradient(ellipse at 50% 0%,#1b360b38,transparent 60%)}
+.timeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative}
+.timeline:before{content:'';position:absolute;top:32px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,#7fd41f88 10%,#7fd41f88 90%,transparent)}
+.timeline li{position:relative;text-align:center;padding:0 6px}
+.tl-icon{position:relative;width:64px;height:64px;margin:0 auto 20px;display:grid;place-items:center;border-radius:50%;border:1px solid #7fd41f80;background:radial-gradient(circle,#1f3d0e,#090f06 70%);color:var(--green);box-shadow:0 0 30px #7fd41f22}.tl-icon .ico{width:26px;height:26px}
+.tl-icon span{position:absolute;top:-6px;right:-8px;padding:2px 6px;border-radius:3px;background:var(--green);color:#0b1504;font:700 10px var(--display)}
+.timeline h3{font-size:17px;margin-bottom:8px;color:#e5f2da}.timeline p{font-size:13px;color:var(--muted);line-height:1.6}
+.deliver{margin-top:56px;display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;padding:22px 26px;border:1px solid #7fd41f40;background:#0c1209;border-radius:6px}.deliver-tag{font:600 11px var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--green)}.deliver ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.deliver li{font-size:13px;color:#d2ddca;padding-left:20px;position:relative;line-height:1.5}.deliver li:before{content:'✓';position:absolute;left:0;color:var(--green)}
+/* 06 equipe */
+.team-board{margin-top:70px;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:28px;border:1px solid #4f663f;border-radius:10px;background:linear-gradient(145deg,#10180d,#070a06)}
+.team-art img{width:100%;border-radius:6px;mask-image:radial-gradient(ellipse at center,black 50%,transparent 78%)}
+.team-roles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}.team-roles li{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid #ffffff10;background:#0b1008;border-radius:6px}.team-roles .ico{width:38px;height:38px;padding:8px;border-radius:7px;background:#7fd41f12;color:var(--green)}.team-roles b{display:block;font-family:var(--display);font-size:14px;color:#e5f2da}.team-roles small{font-size:12px;color:#7f9074}
+/* 07 serviços com ícones */
+.service-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.service-top .service-number{margin:0}.service-ico{display:grid;place-items:center;width:42px;height:42px;border-radius:8px;border:1px solid #7fd41f45;background:#7fd41f10;color:var(--green)}.service:hover .service-ico{background:#7fd41f22}
+/* 08/09 abaixo: seção de resultados com respiro */
+.results{padding-top:100px}
+/* CTA final com ilustração de fundo */
+.final-cta{position:relative;overflow:hidden;padding-top:110px}.final-art{position:absolute!important;inset:0;aspect-ratio:auto;border:0;border-radius:0;opacity:.45;mask-image:linear-gradient(transparent,black 30%,black 70%,transparent)}.final-art:not(:has(img)){opacity:.5}.final-art:before{align-items:start;padding-top:24px}.final-cta .container{position:relative}
+@media(max-width:1000px){.timeline{grid-template-columns:repeat(3,1fr);row-gap:36px}.timeline:before{display:none}.deliver{grid-template-columns:1fr}.deliver ul{grid-template-columns:1fr 1fr}.team-board{grid-template-columns:1fr}}
+@media(max-width:760px){.chap{min-width:26px;height:20px;font-size:10px}.reason-ico{width:38px;height:38px;padding:8px}.not-fit{padding:16px}.illus-wide{margin-bottom:28px}.iceberg-sec{padding-top:20px}.iceberg-legend{grid-template-columns:1fr}.strategy-panel>.stage-art{margin-bottom:-8px}.timeline{grid-template-columns:1fr;gap:0}.timeline li{display:grid;grid-template-columns:56px 1fr;column-gap:16px;text-align:left;padding:0 0 26px;position:relative}.timeline li:not(:last-child):after{content:'';position:absolute;left:27px;top:58px;bottom:4px;width:1px;background:#7fd41f55}.tl-icon{grid-row:1/3;width:56px;height:56px;margin:0}.timeline h3{align-self:end;margin:4px 0 4px}.deliver{margin-top:30px;padding:20px}.deliver ul{grid-template-columns:1fr}.team-board{margin-top:44px;padding:16px;gap:20px}.team-roles{grid-template-columns:1fr}.service-ico{width:38px;height:38px}.final-cta{padding-top:80px}}
+/* v9.1: imagens finais */
+.strategy-panel>.stage-art{width:100%;max-width:820px;justify-self:center;margin-bottom:-10px}
+.stage-art img{mask-image:radial-gradient(ellipse at center,black 55%,transparent 82%)}
+.final-art img{object-position:70% 55%}
+@media(max-width:760px){.final-art{opacity:.32}.final-art img{object-position:74% center}}
