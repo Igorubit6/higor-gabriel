@@ -1,0 +1,51 @@
+/* Identidade v3 nas páginas internas: o topo (.pg-hero) continua escuro; as seções de conteúdo ficam claras.
+   Carregado depois de original.css e project.css. */
+body{background:#fff;background-image:none;color:#111410}
+h1,h2,h3,h4,.logo{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pg-hero h1{font-weight:800;letter-spacing:-.03em}
+.btn{border-radius:999px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700}
+.btn-green{background:#8be02a;color:#0a1400}.btn-green:hover{background:#a6ef55}
+
+/* seções claras (exceto a chamada final, que continua escura) */
+main > section.blk:not(.final){
+  --black:#ffffff; --panel:#ffffff; --panel-2:#f4f6f1; --line:#e4e8de; --white:#111410; --muted:#5a6453;
+  background:#fff; color:#111410;
+}
+main > section.blk.alt:not(.final),main > section.blk:nth-of-type(even):not(.final){background:#f4f6f1;--panel:#ffffff}
+main > section.blk:not(.final) :is(.g, h2 .g, .sec-tag, .eyebrow, .tag, .num, .step-n){color:#3c7609}
+main > section.blk:not(.final) .sec-tag .dmd{background:#3c7609}
+main > section.blk:not(.final) :is(.summary,.inc,.prob,.svc,.step,.card,.faq-item,details,.explain > div,.proof-img,.split > div){
+  background:#fff!important; border-color:#e4e8de!important; color:#111410; box-shadow:0 14px 40px -26px rgba(17,20,16,.28)
+}
+main > section.blk:not(.final) :is(p,li,dd,small){color:#4a5444}
+main > section.blk:not(.final) :is(h2,h3,h4,strong,b,dt){color:#111410}
+main > section.blk:not(.final) .btn-ghost{border-color:#cfd8c7;color:#111410}
+main > section.blk:not(.final) .btn-ghost:hover{border-color:#111410;color:#111410}
+
+/* bloco de prova social das internas, claro */
+.gh-proof{background:#f4f6f1;border-color:#e4e8de}
+.gh-proof h2{color:#5a6453}
+.gh-proof-logos>a{color:#3c7609}
+.gh-proof-quote{background:#fff;border-color:#e4e8de}
+.gh-proof-quote blockquote{color:#111410}
+.gh-proof-quote blockquote::before{color:#3c7609}
+.gh-proof-quote figcaption strong{color:#111410}
+
+/* correções: topo e chamada final continuam escuros com texto claro */
+.pg-hero,main > section.blk.final{--white:#f4f7f0;--muted:#a3ad9b;color:#f4f7f0}
+.pg-hero :is(h1,h2,dt,dd,b,strong,.sub){color:#f4f7f0}
+.pg-hero .sub,.pg-hero dt{color:#b9c4b1}
+.pg-hero .g{color:#8be02a}
+main > section.blk.final .final-card{background:radial-gradient(ellipse at 50% 100%,#24410e,#070907 70%)!important;border-color:#8be02a44!important}
+main > section.blk.final :is(h2,p){color:#f4f7f0}
+main > section.blk.final p{color:#b9c4b1}
+main > section.blk.final .g{color:#8be02a}
+/* prova social clara (precisa vencer o shell.css, que carrega depois) */
+body .gh-proof{background:#f4f6f1;border-color:#e4e8de}
+body .gh-proof h2{color:#5a6453}
+body .gh-proof-logos>a{color:#3c7609}
+body .gh-proof-quote{background:#fff;border-color:#e4e8de}
+body .gh-proof-quote blockquote{color:#111410}
+body .gh-proof-quote blockquote::before{color:#3c7609}
+body .gh-proof-quote figcaption,body .gh-proof-quote small{color:#5a6453}
+body .gh-proof-quote figcaption strong{color:#111410}

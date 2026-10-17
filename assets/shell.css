@@ -3,7 +3,7 @@
 :root{
   --gh-green:#7fd41f;--gh-green-2:#93e82f;--gh-black:#050705;--gh-panel:#0b1008;--gh-line:#263020;
   --gh-white:#f4f7f0;--gh-muted:#a3ad9b;
-  --gh-display:'Space Grotesk',system-ui,sans-serif;--gh-body:Inter,system-ui,sans-serif;
+  --gh-display:'Plus Jakarta Sans',system-ui,sans-serif;--gh-body:Inter,system-ui,sans-serif;
   --gh-fs-label:12.5px;--gh-fs-sm:14px;--gh-fs-base:16px;--gh-fs-lg:18px;--gh-fs-xl:22px;
   --gh-fs-2xl:clamp(30px,3.3vw,44px);--gh-fs-3xl:clamp(40px,4.8vw,66px);
   --gh-header:72px;
@@ -67,7 +67,7 @@ body.gh-menu-open{overflow:hidden}
 .gh-footer{border-top:1px solid var(--gh-line);padding:56px 0 40px;background:var(--gh-black);font-family:var(--gh-body)}
 .gh-footer-in{width:min(1120px,calc(100% - 32px));margin:auto;display:grid;gap:36px;grid-template-columns:1fr}
 @media(min-width:640px){.gh-footer-in{grid-template-columns:1fr 1fr}}
-@media(min-width:960px){.gh-footer-in{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+@media(min-width:960px){.gh-footer-in{grid-template-columns:1.4fr 1fr .8fr 1fr 1fr}}
 .gh-footer p{margin:12px 0 0;color:var(--gh-muted);font-size:var(--gh-fs-sm);line-height:1.6}
 .gh-footer h2{margin:0 0 12px;font:600 var(--gh-fs-label) var(--gh-display);letter-spacing:.16em;text-transform:uppercase;color:var(--gh-green)}
 .gh-footer nav a,.gh-footer .gh-foot-col a{display:block;padding:6px 0;font-size:var(--gh-fs-sm);color:var(--gh-muted);text-decoration:none}
