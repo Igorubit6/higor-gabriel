@@ -1,0 +1,38 @@
+/* Landing pages de nicho (isoladas). Base: v3.css */
+.nh{position:absolute;top:0;left:0;right:0;z-index:20}
+.nh .w{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nh .logo{font:800 19px var(--disp);color:#fff;letter-spacing:-.02em}.nh .logo b{color:var(--lime)}
+.btn.sm{min-height:44px;padding:10px 20px;font-size:14.5px}
+.nicho-hero{margin-top:0;padding-top:140px}
+.nicho-hero .hero-art-stage img{object-position:right center}
+@media(max-width:760px){.nicho-hero{padding-top:110px}.nicho-hero .hero-shade{background:linear-gradient(180deg,#070907f0 0%,#070907d9 60%,#070907 100%)}.nh .btn{padding:8px 14px;font-size:13.5px}}
+
+.dores{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.dor{background:#fff;border:1px solid var(--line);border-top:3px solid #d4553f;border-radius:var(--r2);padding:26px;box-shadow:var(--shadow)}
+.dor h3{font-size:20px;margin-bottom:8px}.dor p{color:var(--muted)}
+@media(max-width:860px){.dores{grid-template-columns:1fr}}
+
+.nicho-steps{grid-template-columns:repeat(3,1fr);margin-top:36px}
+.nicho-steps li{grid-template-columns:1fr;row-gap:6px}
+.nicho-steps .n{grid-row:auto}
+@media(max-width:860px){.nicho-steps{grid-template-columns:1fr}}
+
+.oferta{margin-top:32px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:var(--r2);padding:32px}
+.oferta ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;flex:1;min-width:280px}
+.oferta li{display:flex;gap:10px;align-items:flex-start;font-size:17px;color:#dfe6d9}
+.oferta li svg{flex:none;width:20px;height:20px;margin-top:3px;fill:none;stroke:var(--lime);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.nicho-prova{margin-top:18px;padding:16px 20px;border-left:3px solid var(--lime-txt);background:var(--lime-soft);border-radius:0 14px 14px 0;font-size:16px}
+.nicho-prova b{color:var(--lime-txt)}
+.comp-t{font-size:19px;margin:44px 0 16px}
+.comps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.comp{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.comp svg{flex:none;width:26px;height:26px;fill:none;stroke:var(--lime-txt);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.comp h3{font-size:17px;margin-bottom:4px}.comp p{font-size:15px;color:var(--muted)}
+@media(max-width:1000px){.comps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.comps{grid-template-columns:1fr}.oferta{padding:24px 20px}.oferta .btn{width:100%}}
+
+.nf{background:var(--ink);color:#8f9a88;font-size:14px;padding:28px 0}
+.nf .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.nwa{position:fixed;right:18px;bottom:18px;z-index:30;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#25d366;box-shadow:0 10px 28px -6px rgba(0,0,0,.5)}
+.nwa svg{width:27px;height:27px;fill:#fff}
+@media(max-width:600px){.nwa{width:48px;height:48px;right:14px;bottom:14px}}
