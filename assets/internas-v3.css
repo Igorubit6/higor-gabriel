@@ -49,3 +49,7 @@ body .gh-proof-quote blockquote{color:#111410}
 body .gh-proof-quote blockquote::before{color:#3c7609}
 body .gh-proof-quote figcaption,body .gh-proof-quote small{color:#5a6453}
 body .gh-proof-quote figcaption strong{color:#111410}
+/* rotulos sobre a arte do iceberg: a arte e escura, o texto fica branco */
+main > section.blk .iceberg-story .iceberg-point b{color:#fff}
+main > section.blk .iceberg-story figcaption{color:#fff}
+

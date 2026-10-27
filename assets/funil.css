@@ -37,3 +37,15 @@
   .fn-sim{padding:20px 18px;margin-top:22px}
   .fn-group{margin-top:18px}
 }
+
+/* === contraste: blocos de fundo escuro dentro da pagina clara (v3) ===
+   internas-v3.css pinta todo h2/h3/h4/b/strong/p de escuro; aqui devolvemos
+   a cor clara, porque o fundo destes blocos e escuro. */
+main > section.blk :is(.fn-bar,.fn-card,.fn-sim,.fn-sim-grid,.fn-chart){color:#d7e6cb}
+main > section.blk :is(.fn-bar,.fn-card,.fn-sim,.fn-sim-grid) :is(h2,h3,h4,strong,b,dt){color:#fff}
+main > section.blk :is(.fn-bar,.fn-card,.fn-sim,.fn-sim-grid) :is(p,li,dd,small){color:#c3cdbb}
+main > section.blk :is(.fn-bar,.fn-card,.fn-sim) .fn-rate{color:#c8f69b}
+/* a ultima barra do funil tem fundo verde claro: ali o texto volta a ser escuro */
+main > section.blk .fn-row.bottom .fn-bar,
+main > section.blk .fn-row.bottom .fn-bar :is(h2,h3,h4,strong,b,dt,p,li,dd,small){color:#0b1504}
+
