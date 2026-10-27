@@ -53,3 +53,13 @@ body .gh-proof-quote figcaption strong{color:#111410}
 main > section.blk .iceberg-story .iceberg-point b{color:#fff}
 main > section.blk .iceberg-story figcaption{color:#fff}
 
+/* lista enxuta de "o que esta incluso" (substitui os 7 cards de texto) */
+.inc-list{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+.inc-list li{position:relative;padding:12px 0 12px 20px;border-bottom:1px solid #e3e8df}
+.inc-list li::before{content:"";position:absolute;left:0;top:19px;width:8px;height:8px;background:#3c7609;transform:rotate(45deg)}
+.inc-list b{display:block}
+.inc-list span{display:block;margin-top:2px}
+.inc-list b{font-weight:700}
+.inc-list span{color:#4a5444}
+@media(max-width:760px){.inc-list{grid-template-columns:1fr;gap:0}}
+
