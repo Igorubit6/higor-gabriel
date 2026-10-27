@@ -139,16 +139,22 @@ em{font-style:normal;color:var(--lime-txt)}
 /* topo com a imagem do Higor (out/2026) */
 .hero-art-stage picture{position:absolute;inset:0}
 .hero-art-stage img{object-position:right center}
-.hero-mob{display:none}
 @media(max-width:760px){
-  .hero-art-stage{display:none}
-  .hero-shade{display:none}
-  .hero{background:radial-gradient(ellipse at 70% 75%,#1d3a0c 0%,#070907 60%)}
-  .hero-mob{display:block;width:100%;max-width:420px;margin:28px auto 0;border-radius:22px;aspect-ratio:4/5;object-fit:cover}
+  /* a mesma imagem do desktop continua como FUNDO no celular */
+  .hero-art-stage{display:block}
+  .hero-art-stage img{object-position:58% top}
+  .hero-shade{display:block;background:linear-gradient(180deg,#070907f2 0%,#070907c9 26%,#07090759 48%,#070907e8 78%,#070907 100%)}
 }
 .clients-band{background:#070907;color:#fff}
 .clients-band .client-name{color:#c3cdbb}
 .home-v3 .hero{min-height:min(760px,calc(100vh - 60px));display:flex;align-items:center;padding-bottom:40px}
 .home-v3 .hero .w{width:min(1120px,calc(100% - 40px))}
 .home-v3 .hero-art-stage img{object-position:72% 40%}
-@media(max-width:760px){.home-v3 .hero{min-height:0;display:block}}
+@media(max-width:760px){
+  .home-v3 .hero{min-height:min(600px,88svh);display:flex;align-items:flex-end;padding-bottom:0}
+  .home-v3 .hero .hero-copy{padding-bottom:32px;padding-top:min(24svh,180px)}
+  .home-v3 .hero h1{font-size:clamp(32px,8.6vw,42px);line-height:1.08}
+  .home-v3 .hero .lead{font-size:16px;margin:14px 0 22px}
+  .home-v3 .hero .ctas{gap:10px}
+  .home-v3 .hero-proof{margin-top:18px}
+}
