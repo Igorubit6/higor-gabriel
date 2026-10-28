@@ -211,4 +211,5 @@ em{font-style:normal;color:var(--lime-txt)}
   .final ol li{width:100%;max-width:330px;justify-content:flex-start;text-align:left;font-size:15px;padding:11px 16px}
   .final ol b{flex:none}
 }
+.boost .ress{display:block;margin-top:6px;font-size:13.5px;opacity:.75}
 
