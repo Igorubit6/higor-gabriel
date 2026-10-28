@@ -172,25 +172,56 @@ em{font-style:normal;color:var(--lime-txt)}
 .faz-head.visible .faz-t em{background-size:100% 12px}
 
 .tres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-.tri{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;padding:30px 26px 28px;
+.tri{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:30px 26px 28px;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r2);box-shadow:var(--shadow);
   transition:border-color .22s,box-shadow .22s,transform .22s}
-.tri::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--lime),#3c7609);
-  transform:scaleX(0);transform-origin:left;transition:transform .45s}
 .tri:hover{transform:translateY(-4px);border-color:#bfe39a;box-shadow:0 20px 46px -22px #1d3a0c59}
-.tri:hover::before{transform:scaleX(1)}
-.tri-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;
-  background:#7fd41f1f;border:1px solid #7fd41f45}
-.tri-ic svg{width:23px;height:23px;fill:none;stroke:#3c7609;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.tri-n{position:absolute;right:18px;top:14px;font:800 42px var(--disp);color:#11141008;letter-spacing:-.02em}
+.tri-n{font:800 13px var(--disp);letter-spacing:.16em;color:var(--lime-txt)}
 .tri h3{font:700 21px/1.25 var(--disp);color:var(--text)}
 .tri p{color:var(--muted)}
 .tres-nota{margin-top:24px;font-size:15px;color:var(--muted)}
-@media(max-width:900px){.tres{grid-template-columns:1fr;gap:14px;margin-top:32px}.tri{padding:24px 20px}.tri-n{font-size:34px}}
+@media(max-width:900px){.tres{grid-template-columns:1fr;gap:14px;margin-top:32px}.tri{padding:24px 20px}}
 
-/* entrada escalonada dos 3 cartoes */
+/* trilho: uma luz percorre os tres cartoes em sequencia, sem parar.
+   no desktop corre na borda de cima; no celular, na lateral esquerda.
+   usa so transform e opacidade, que o celular desenha de forma leve. */
+.tri::before{content:"";position:absolute;left:0;top:0;width:45%;height:4px;border-radius:0 4px 4px 0;
+  background:linear-gradient(90deg,#7fd41f00,var(--lime) 55%,#eaffd4);
+  box-shadow:0 0 14px #7fd41f99;opacity:0;transform:translateX(-110%)}
+.tri::after{content:"";position:absolute;inset:0;border-radius:var(--r2);pointer-events:none;
+  box-shadow:inset 0 0 0 1px #7fd41f00}
 @media(prefers-reduced-motion:no-preference){
   .js-motion .tri{transition:opacity .6s var(--d,0ms),transform .6s var(--d,0ms),border-color .22s,box-shadow .22s}
+  .js-motion .tri::before{animation:tri-luz 5.4s cubic-bezier(.4,0,.5,1) infinite;animation-delay:var(--dl,0ms)}
+  .js-motion .tri::after{animation:tri-borda 5.4s ease-in-out infinite;animation-delay:var(--dl,0ms)}
+  .js-motion .tri-n{animation:tri-num 5.4s ease-in-out infinite;animation-delay:var(--dl,0ms)}
+}
+@keyframes tri-luz{
+  0%{transform:translateX(-110%);opacity:0}
+  3%{opacity:1}
+  26%{transform:translateX(240%);opacity:1}
+  31%{transform:translateX(240%);opacity:0}
+  100%{transform:translateX(240%);opacity:0}
+}
+@keyframes tri-borda{
+  0%,34%,100%{box-shadow:inset 0 0 0 1px #7fd41f00}
+  7%,26%{box-shadow:inset 0 0 0 1.5px #7fd41f7a}
+}
+@keyframes tri-num{
+  0%,34%,100%{color:var(--lime-txt);letter-spacing:.16em}
+  7%,26%{color:#2e6b00;letter-spacing:.22em}
+}
+@media(max-width:900px){
+  .tri::before{width:4px;height:42%;border-radius:0 0 4px 4px;
+    background:linear-gradient(180deg,#7fd41f00,var(--lime) 55%,#eaffd4);transform:translateY(-110%)}
+  .js-motion .tri::before{animation-name:tri-luz-v}
+}
+@keyframes tri-luz-v{
+  0%{transform:translateY(-110%);opacity:0}
+  3%{opacity:1}
+  26%{transform:translateY(250%);opacity:1}
+  31%{transform:translateY(250%);opacity:0}
+  100%{transform:translateY(250%);opacity:0}
 }
 
 /* === cards de "escolha seu caminho": o bloco inteiro e clicavel ===
