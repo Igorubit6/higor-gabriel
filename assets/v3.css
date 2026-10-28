@@ -142,7 +142,8 @@ em{font-style:normal;color:var(--lime-txt)}
 @media(max-width:760px){
   /* a mesma imagem do desktop continua como FUNDO no celular */
   .hero-art-stage{display:block}
-  .hero-art-stage img{object-position:58% top}
+  /* a foto sobe: tira a sobra acima da cabeca sem cortar o rosto */
+  .hero-art-stage img{height:130%;top:-24%;object-position:58% top}
   .hero-shade{display:block;background:linear-gradient(180deg,#070907f2 0%,#070907c9 26%,#07090759 48%,#070907e8 78%,#070907 100%)}
 }
 .clients-band{background:#070907;color:#fff}
@@ -159,15 +160,38 @@ em{font-style:normal;color:var(--lime-txt)}
   .home-v3 .hero-proof{margin-top:18px}
 }
 
-/* === secao "o que a gente faz" (3 pontos) === */
-.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.tri{position:relative;display:flex;flex-direction:column;gap:10px;padding:30px 26px;background:var(--card);
-  border:1px solid var(--line);border-radius:var(--r2);box-shadow:var(--shadow)}
-.tri-n{font:700 13px var(--disp);letter-spacing:.14em;color:var(--lime-txt)}
+/* === secao "o que a gente faz" === */
+.faz{position:relative;overflow:hidden}
+.faz::before{content:"";position:absolute;left:50%;top:-180px;width:760px;height:380px;transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,#7fd41f1f,transparent 68%);pointer-events:none}
+.faz-head{position:relative;max-width:760px}
+.faz-t{font-size:clamp(30px,4.3vw,48px);line-height:1.08}
+.faz-t em{color:var(--lime-txt);font-style:normal;white-space:nowrap;
+  background-image:linear-gradient(#7fd41f40,#7fd41f40);background-repeat:no-repeat;
+  background-position:0 86%;background-size:0 12px;transition:background-size .75s .2s cubic-bezier(.2,.7,.2,1)}
+.faz-head.visible .faz-t em{background-size:100% 12px}
+
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.tri{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;padding:30px 26px 28px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r2);box-shadow:var(--shadow);
+  transition:border-color .22s,box-shadow .22s,transform .22s}
+.tri::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--lime),#3c7609);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s}
+.tri:hover{transform:translateY(-4px);border-color:#bfe39a;box-shadow:0 20px 46px -22px #1d3a0c59}
+.tri:hover::before{transform:scaleX(1)}
+.tri-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;
+  background:#7fd41f1f;border:1px solid #7fd41f45}
+.tri-ic svg{width:23px;height:23px;fill:none;stroke:#3c7609;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tri-n{position:absolute;right:18px;top:14px;font:800 42px var(--disp);color:#11141008;letter-spacing:-.02em}
 .tri h3{font:700 21px/1.25 var(--disp);color:var(--text)}
 .tri p{color:var(--muted)}
-.tres-nota{margin-top:22px;font-size:15px;color:var(--muted)}
-@media(max-width:900px){.tres{grid-template-columns:1fr;gap:14px}.tri{padding:24px 20px}}
+.tres-nota{margin-top:24px;font-size:15px;color:var(--muted)}
+@media(max-width:900px){.tres{grid-template-columns:1fr;gap:14px;margin-top:32px}.tri{padding:24px 20px}.tri-n{font-size:34px}}
+
+/* entrada escalonada dos 3 cartoes */
+@media(prefers-reduced-motion:no-preference){
+  .js-motion .tri{transition:opacity .6s var(--d,0ms),transform .6s var(--d,0ms),border-color .22s,box-shadow .22s}
+}
 
 /* === cards de "escolha seu caminho": o bloco inteiro e clicavel ===
    o botao continua sendo o unico link (bom para leitor de tela) e seu
@@ -180,3 +204,11 @@ em{font-style:normal;color:var(--lime-txt)}
 .path:hover .btn-p{filter:brightness(1.05)}
 .path:focus-within{border-color:var(--lime);box-shadow:0 0 0 3px #7fd41f55}
 @media(hover:hover){.path{cursor:pointer}}
+
+/* chamada final no celular: os tres passos com a mesma largura */
+@media(max-width:760px){
+  .final ol{flex-direction:column;align-items:center;gap:10px;margin:26px auto 28px}
+  .final ol li{width:100%;max-width:330px;justify-content:flex-start;text-align:left;font-size:15px;padding:11px 16px}
+  .final ol b{flex:none}
+}
+
